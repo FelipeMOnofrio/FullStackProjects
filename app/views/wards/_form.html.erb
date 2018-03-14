@@ -1,0 +1,22 @@
+<%= form_with(model: ward, local: true) do |form| %>
+  <% if ward.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ward.errors.count, "error") %> prohibited this ward from being saved:</h2>
+
+      <ul>
+      <% ward.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ward %>
+    <%= form.text_field :ward, id: :ward_ward %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

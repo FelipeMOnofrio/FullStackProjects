@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Issue date:</strong>
+  <%= @parking_contravention.issue_date %>
+</p>
+
+<p>
+  <strong>Violation:</strong>
+  <%= @parking_contravention.violation.violation %>
+</p>
+
+<p>
+  <strong>Ticket number:</strong>
+  <%= @parking_contravention.ticket_number %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @parking_contravention.street %>
+</p>
+
+<%= link_to 'Edit', edit_parking_contravention_path(@parking_contravention) %> |
+<%= link_to 'Back', parking_contraventions_path %>

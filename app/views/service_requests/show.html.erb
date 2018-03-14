@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Service request:</strong>
+  <%= @service_request.service_request %>
+</p>
+
+<p>
+  <strong>Service area:</strong>
+  <%= @service_request.service_area.service_area %>
+</p>
+
+<%= link_to 'Edit', edit_service_request_path(@service_request) %> |
+<%= link_to 'Back', service_requests_path %>

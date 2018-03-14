@@ -1,0 +1,34 @@
+<h1>Search Results</h1>
+
+
+
+<p>Your search for "<%= @search_terms %>".</p>
+
+<ul>
+  <% @parking_contravention.each do |pc| %>
+    <li><%= link_to pc.ticket_number, pc %></li>
+  <% end %>
+
+  <% @violation.each do |v| %>
+    <li><%= link_to v.violation, v %></li>
+  <% end %>
+
+  <% @service_areas.each do |sa| %>
+    <li><%= link_to sa.service_area, sa %></li>
+  <% end %>
+
+  <% @service_request.each do |sr| %>
+    <li><%= link_to sr.service_request, sr %></li>
+  <% end %>
+
+  <% @wards.each do |w| %>
+    <li><%= link_to w.ward, w %></li>
+  <% end %>
+
+  <% @neighbourhoods.each do |n| %>
+    <li><%= link_to n.neighbourhood, n %></li>
+  <% end %>
+
+
+
+</ul>

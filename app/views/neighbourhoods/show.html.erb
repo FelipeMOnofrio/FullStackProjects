@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Neighbourhood:</strong>
+  <%= @neighbourhood.neighbourhood %>
+</p>
+
+<p>
+<strong>Wards:</strong>
+<%= @neighbourhood.wards.pluck(:ward).join(',') %>
+</p>
+
+
+<%= link_to 'Edit', edit_neighbourhood_path(@neighbourhood) %> |
+<%= link_to 'Back', neighbourhoods_path %>

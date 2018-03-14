@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="h1">Service Requests</h1>
+
+<table class="table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>Service request</th>
+      <th>Service area</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_requests.each do |service_request| %>
+      <tr>
+        <td><%= service_request.service_request %></td>
+
+        <td><%= service_request.service_area.service_area %></td>
+
+
+        <td><%= link_to 'Show', service_request %></td>
+        <td><%= link_to 'Edit', edit_service_request_path(service_request) %></td>
+        <td><%= link_to 'Destroy', service_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Service Request', new_service_request_path %>

@@ -1,0 +1,37 @@
+<%= form_with(model: parking_contravention, local: true) do |form| %>
+  <% if parking_contravention.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parking_contravention.errors.count, "error") %> prohibited this parking_contravention from being saved:</h2>
+
+      <ul>
+      <% parking_contravention.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :issue_date %>
+    <%= form.datetime_select :issue_date, id: :parking_contravention_issue_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ticket_number %>
+    <%= form.number_field :ticket_number, id: :parking_contravention_ticket_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street %>
+    <%= form.text_field :street, id: :parking_contravention_street %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Violation %>
+    <%= form.collection_select(:id, Violation.all, :id, :violation) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

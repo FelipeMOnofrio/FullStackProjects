@@ -1,0 +1,22 @@
+<%= form_with(model: neighbourhood, local: true) do |form| %>
+  <% if neighbourhood.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(neighbourhood.errors.count, "error") %> prohibited this neighbourhood from being saved:</h2>
+
+      <ul>
+      <% neighbourhood.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :neighbourhood %>
+    <%= form.text_field :neighbourhood, id: :neighbourhood_neighbourhood %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
